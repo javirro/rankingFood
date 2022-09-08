@@ -1,0 +1,131 @@
+{
+    "compiler": {
+        "version": "0.8.7+commit.e28d00a7"
+    },
+    "language": "Solidity",
+    "output": {
+        "abi": [{
+                "inputs": [{
+                        "internalType": "string",
+                        "name": "where",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "position",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "addBurger",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [{
+                        "internalType": "string",
+                        "name": "where",
+                        "type": "string"
+                    },
+                    {
+                        "internalType": "uint256",
+                        "name": "position",
+                        "type": "uint256"
+                    }
+                ],
+                "name": "addCheesecake",
+                "outputs": [],
+                "stateMutability": "nonpayable",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "burgerNumber",
+                "outputs": [{
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [{
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }],
+                "name": "burgerRanking",
+                "outputs": [{
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [],
+                "name": "cheesecakeNumber",
+                "outputs": [{
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }],
+                "stateMutability": "view",
+                "type": "function"
+            },
+            {
+                "inputs": [{
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }],
+                "name": "cheesecakeRanking",
+                "outputs": [{
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }],
+                "stateMutability": "view",
+                "type": "function"
+            }
+        ],
+        "devdoc": {
+            "kind": "dev",
+            "methods": {},
+            "version": 1
+        },
+        "userdoc": {
+            "kind": "user",
+            "methods": {},
+            "version": 1
+        }
+    },
+    "settings": {
+        "compilationTarget": {
+            "contracts/ranking.sol": "ranking"
+        },
+        "evmVersion": "london",
+        "libraries": {},
+        "metadata": {
+            "bytecodeHash": "ipfs"
+        },
+        "optimizer": {
+            "enabled": false,
+            "runs": 200
+        },
+        "remappings": []
+    },
+    "sources": {
+        "contracts/ranking.sol": {
+            "keccak256": "0x73e8a51e66a810bad5b2ac74835d672c7b1701dcc85c88211aa822a6f2d578b9",
+            "license": "GPL-3.0",
+            "urls": [
+                "bzz-raw://5e1f67dda9fa14127b25eb81f399c201ceab663f82d7dfbb77a2cfd96df5d0d5",
+                "dweb:/ipfs/QmfPXjNbUyrWGPnu8RkjNoRDNgct5eCc8Xb1ZtTBGy6hN9"
+            ]
+        }
+    },
+    "version": 1
+}
