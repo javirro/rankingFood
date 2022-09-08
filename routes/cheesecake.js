@@ -22,7 +22,6 @@ router.post('/', jsonParser, async(req, res) => {
     const where = req.body.where
     const position = req.body.position
     const tx = await contract.methods.addCheesecake(where, parseInt(position)).send({ from: userAddress })
-    console.log(tx.transactionHash)
     res.status(200).json(tx)
 
 })
