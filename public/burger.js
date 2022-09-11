@@ -1,7 +1,10 @@
 const mainSelect = document.getElementById("bg-select-action");
 const seeDiv = document.getElementById("bg-see-ranking");
 const addDiv = document.getElementById("bg-add");
-const headers = { 'Accept': 'application/json', "Content-Type": "application/json" }
+const headers = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+};
 
 mainSelect.addEventListener("change", () => {
     const option = document.getElementById("bg-select-action").value;
@@ -17,23 +20,25 @@ mainSelect.addEventListener("change", () => {
     }
 });
 
+const btSee = document.getElementById("bg-bt-see");
+const btAdd = document.getElementById("bg-bt-add");
 
-const btSee = document.getElementById('bg-bt-see')
-const btAdd = document.getElementById('bg-bt-add')
+btSee.addEventListener("click", async() => {
+    const response = await fetch("/burger");
+    const data = await response.json();
+    console.log(data);
+});
 
-btSee.addEventListener('click', async() => {
-    const response = await fetch('/burger/see')
-    const data = await response.json()
-
-})
-
-
-btAdd.addEventListener('click', async() => {
-    const where = document.getElementById('bg-where').value
-    const position = document.getElementById('bg-position').value
+btAdd.addEventListener("click", async() => {
+    const where = document.getElementById("bg-where").value;
+    const position = document.getElementById("bg-position").value;
     const bodyData = JSON.stringify({
         where: where,
-        position: position
-    })
-    const response = await fetch('/burger', { method: 'POST', headers: headers, body: bodyData, })
-})
+        position: position,
+    });
+    const response = await fetch("/burger", {
+        method: "POST",
+        headers: headers,
+        body: bodyData,
+    });
+});

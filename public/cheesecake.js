@@ -23,10 +23,12 @@ const btAdd = document.getElementById('ck-bt-add')
 btSee.addEventListener('click', async() => {
     const response = await fetch('/cheesecake')
     const data = await response.json()
+    console.log(data)
 })
 
 
 btAdd.addEventListener('click', async() => {
+
     const where = document.getElementById('ck-where').value
     const position = document.getElementById('ck-position').value
     const bodyData = JSON.stringify({

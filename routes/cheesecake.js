@@ -14,7 +14,13 @@ const web3 = new Web3(provider)
 const contract = new web3.eth.Contract(contractArtifact.output.abi, contractAddress)
 
 router.get('/', async(req, res) => {
-    res.status(200).json("OK")
+    const cheesecakeNumber = await contract.methods.cheesecakeNumber().call()
+    const ranking = []
+    for (let i = 1; i <= cheesecakeNumber; i++) {
+        ranking.push(await contract.methods.cheesecakeRanking([i]).call())
+    }
+    console.log(ranking)
+    res.status(200).json(ranking)
 
 })
 
@@ -23,6 +29,12 @@ router.post('/', jsonParser, async(req, res) => {
     const position = req.body.position
     const tx = await contract.methods.addCheesecake(where, parseInt(position)).send({ from: userAddress })
     res.status(200).json(tx)
+
+})
+
+router.get('/number', async(req, res) => {
+    const cheesecakeNumber = await contract.methods.cheesecakeNumber().call()
+    res.status(200).json(cheesecakeNumber)
 
 })
 module.exports = router

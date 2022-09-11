@@ -14,7 +14,13 @@ const web3 = new Web3(provider);
 const contract = new web3.eth.Contract(contractArtifact.output.abi, contractAddress)
 
 router.get("/", async(req, res) => {
-    res.status(200).json("OK");
+    const burgerNumber = await contract.methods.burgerNumber().call()
+    const ranking = []
+    for (let i = 1; i <= burgerNumber; i++) {
+        ranking.push(await contract.methods.burgerRanking([i]).call())
+    }
+    console.log(ranking)
+    res.status(200).json(ranking)
 });
 
 router.post("/", jsonParser, async(req, res) => {
@@ -23,5 +29,11 @@ router.post("/", jsonParser, async(req, res) => {
     const tx = await contract.methods.addBurger(where, parseInt(position)).send({ from: userAddress })
     res.status(200).json(tx)
 });
+
+router.get('/number', async(req, res) => {
+    const burgerNumber = await contract.methods.burgerNumber().call()
+    res.status(200).json(burgerNumber)
+
+})
 
 module.exports = router;
