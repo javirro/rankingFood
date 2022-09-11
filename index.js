@@ -17,3 +17,5 @@ app.use('/burger', require('./routes/burger'));
 app.listen(PORT, () => {
     console.log("Registrar-Server running in port " + PORT);
 });
+
+module.exports = app
