@@ -13,7 +13,9 @@ app.use(express.static('front-end'))
 app.use('/cheesecake', require('./routes/cheesecake'));
 app.use('/burger', require('./routes/burger'));
 
-
+app.get('/', (req, res) => {
+    res.send("Hello")
+})
 app.listen(PORT, () => {
     console.log("Registrar-Server running in port " + PORT);
 });
