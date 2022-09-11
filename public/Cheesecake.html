@@ -31,25 +31,14 @@
     <div id="main" class="container">
 
         <h3>Cheesecakes 🍰 </h3>
-        <div id="ck-main" class="container mb-3" style="display: block;">
-            <select id="ck-select-action" class="form-select">
-                <option value="0" disabled selected> Choose an option </option>
-                <option value="1"> See current ranking </option>
-                <option value="2"> Add new Cheesecake </option>
-            </select>
-        </div>
 
-        <div id="ck-see-ranking" class="container" style="display: none;">
-            <button id="ck-bt-see" class="btn bt-registrar">See current ranking</button>
-            <div id="ck-see-result">
 
-            </div>
-        </div>
-
-        <div id="ck-add" class="container" style="display: none;">
+        <div id="ck-add" class="container" style="display: block;">
             <input class="form-control ml-1" type="text" placeholder="Where did you eat?" id="ck-where">
             <input class="form-control ml-1" type="text" placeholder="What is the position?" id="ck-position">
             <button id="ck-bt-add" class="btn bt-registrar">Add new cheesecake</button>
+
+            <div id="ck-ranking-current" class="mt-5"></div>
         </div>
 
 

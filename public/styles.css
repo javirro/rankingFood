@@ -1,7 +1,11 @@
-.landing-images {
-    width: 400px;
-    height: 200px;
-    margin-left: 25px
+table,
+th,
+tr,
+td {
+    border-collapse: collapse;
+    border: solid 1px;
+    width: 450px;
+    padding: 3px;
 }
 
 @media (max-width: 640px) {
