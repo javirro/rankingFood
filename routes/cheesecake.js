@@ -35,6 +35,5 @@ router.post('/', jsonParser, async(req, res) => {
 router.get('/number', async(req, res) => {
     const cheesecakeNumber = await contract.methods.cheesecakeNumber().call()
     res.status(200).json(cheesecakeNumber)
-
 })
 module.exports = router

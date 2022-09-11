@@ -30,15 +30,20 @@ btSee.addEventListener("click", async() => {
 });
 
 btAdd.addEventListener("click", async() => {
-    const where = document.getElementById("bg-where").value;
+    const numberRes = await fetch("/burger/number");
+    const number = await numberRes.json();
     const position = document.getElementById("bg-position").value;
-    const bodyData = JSON.stringify({
-        where: where,
-        position: position,
-    });
-    const response = await fetch("/burger", {
-        method: "POST",
-        headers: headers,
-        body: bodyData,
-    });
+    const where = document.getElementById("bg-where").value;
+    if (position > number + 1) alert(`You only have ${number} burgers in the ranking.`);
+    else {
+        const bodyData = JSON.stringify({
+            where: where,
+            position: position,
+        });
+        const response = await fetch("/burger", {
+            method: "POST",
+            headers: headers,
+            body: bodyData,
+        });
+    }
 });

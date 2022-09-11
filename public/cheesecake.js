@@ -28,13 +28,17 @@ btSee.addEventListener('click', async() => {
 
 
 btAdd.addEventListener('click', async() => {
-
+    const numberRes = await fetch("/burger/number");
+    const number = await numberRes.json();
     const where = document.getElementById('ck-where').value
     const position = document.getElementById('ck-position').value
-    const bodyData = JSON.stringify({
-        where: where,
-        position: position
-    })
-    const response = await fetch('/cheesecake', { method: 'POST', headers: headers, body: bodyData, })
-    console.log(response)
+    if (position > number + 1) alert(`You only have ${number} cheesecakes in the ranking.`);
+    else {
+        const bodyData = JSON.stringify({
+            where: where,
+            position: position
+        })
+        const response = await fetch('/cheesecake', { method: 'POST', headers: headers, body: bodyData, })
+    }
+
 })
