@@ -5,7 +5,7 @@
         "use": "@vercel/node"
     }],
     "routes": [{
-        "src": "./routes/(.*)",
+        "src": "./routes/burger.js",
         "dest": "index.js"
     }]
 }
