@@ -8,8 +8,8 @@ const HDWalletProvider = require('@truffle/hdwallet-provider')
 const contractArtifact = require('../contracts/ranking.json')
 const FTM_RPC = "https://rpc.testnet.fantom.network/"
 const provider = new HDWalletProvider(process.env.MNEMONIC, FTM_RPC)
-const contractAddress = "0x6c8a4CE1De7661A4185B1aB5DbC26f672dE52F97"
-const userAddress = "0x0530EdE068F94ee2737fF8538a0D599c4a16f459"
+const contractAddress = "0xfeed04EFFE80a246aD279372d9094643f2F43B6c"
+const userAddress = "0x57Fea11dA9e4d52262cf25d6D487BE2724b2FF09"
 const web3 = new Web3(provider)
 const contract = new web3.eth.Contract(contractArtifact.output.abi, contractAddress)
 

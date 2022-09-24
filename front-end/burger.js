@@ -6,10 +6,10 @@ const headers = {
     Accept: "application/json",
     "Content-Type": "application/json",
 };
-
+const API_URL = 'https://ranking-git-master-javirro.vercel.app'
 const searchBurgers = async() => {
     resultDiv.innerHTML = ""
-    const response = await fetch("/burger");
+    const response = await fetch(`${API_URL}/burger`);
     const bgPromise = response.json();
     bgPromise.then((data) => showData(data))
 };
@@ -48,7 +48,7 @@ const showData = (data) => {
 
 const btAdd = document.getElementById("bg-bt-add");
 btAdd.addEventListener("click", async() => {
-    const numberRes = await fetch("/burger/number");
+    const numberRes = await fetch(`${API_URL}/burger/number`);
     const number = await numberRes.json();
     const position = document.getElementById("bg-position").value;
     const where = document.getElementById("bg-where").value;
@@ -58,7 +58,7 @@ btAdd.addEventListener("click", async() => {
             where: where,
             position: position,
         });
-        const response = await fetch("/burger", {
+        const response = await fetch(`${API_URL}/burger`, {
             method: "POST",
             headers: headers,
             body: bodyData,
